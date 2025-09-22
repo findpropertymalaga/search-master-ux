@@ -15,7 +15,7 @@ const SearchButton = ({ isLoading, children }: SearchButtonProps) => {
       disabled={isLoading}
     >
       <Search className="h-4 w-4 mr-2" />
-      Search properties
+      Sök fastigheter
       {children}
     </Button>
   );

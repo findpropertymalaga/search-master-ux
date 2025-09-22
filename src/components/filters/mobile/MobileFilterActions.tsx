@@ -17,7 +17,7 @@ const MobileFilterActions = ({
         onClick={onApplyFilters}
         className="w-full bg-blue-600 hover:bg-blue-700 text-white"
       >
-        Update list view ({totalCount})
+        Uppdatera listvy ({totalCount})
       </Button>
     </div>
   );

@@ -11,10 +11,10 @@ export const formatRoomCount = (value: string): string => {
 // Get the property type display name
 export const getPropertyTypeDisplay = (type: string): string => {
   const types: Record<string, string> = {
-    'apartment': 'Apartment',
+    'apartment': 'Lägenhet',
     'villa': 'Villa',
-    'house': 'House',
-    'land': 'Land',
+    'house': 'Hus',
+    'land': 'Mark',
   };
   
   return types[type] || type;

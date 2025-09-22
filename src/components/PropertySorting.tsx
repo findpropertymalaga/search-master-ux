@@ -22,17 +22,17 @@ interface PropertySortingProps {
 const PropertySorting = ({ sortOrder, onSortChange, className = "" }: PropertySortingProps) => {
   return (
     <div className={`flex items-center space-x-2 ${className}`}>
-      <span className="text-sm font-medium text-gray-700">Sort by:</span>
+      <span className="text-sm font-medium text-gray-700">Sortera efter:</span>
       <Select value={sortOrder} onValueChange={onSortChange}>
         <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Choose sorting" />
+          <SelectValue placeholder="Välj sortering" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="published">Updated</SelectItem>
-          <SelectItem value="price-asc">Price: Low to High</SelectItem>
-          <SelectItem value="price-desc">Price: High to Low</SelectItem>
-          <SelectItem value="size-asc">Size: Small to Large</SelectItem>
-          <SelectItem value="size-desc">Size: Large to Small</SelectItem>
+          <SelectItem value="published">Uppdaterad</SelectItem>
+          <SelectItem value="price-asc">Pris: Låg till hög</SelectItem>
+          <SelectItem value="price-desc">Pris: Hög till låg</SelectItem>
+          <SelectItem value="size-asc">Storlek: Liten till stor</SelectItem>
+          <SelectItem value="size-desc">Storlek: Stor till liten</SelectItem>
         </SelectContent>
       </Select>
     </div>

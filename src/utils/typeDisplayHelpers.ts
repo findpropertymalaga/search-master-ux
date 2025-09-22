@@ -1,10 +1,10 @@
 export const getPropertyTypeDisplay = (type: string | string[]): string => {
   if (Array.isArray(type)) {
-    if (type.length === 0) return 'All types';
+    if (type.length === 0) return 'Alla typer';
     if (type.length === 1) {
       return getSingleTypeDisplay(type[0]);
     }
-    return `${type.length} types selected`;
+    return `${type.length} typer valda`;
   }
   
   return getSingleTypeDisplay(type);
@@ -13,28 +13,28 @@ export const getPropertyTypeDisplay = (type: string | string[]): string => {
 const getSingleTypeDisplay = (type: string): string => {
   switch (type?.toLowerCase()) {
     case 'apartment':
-      return 'Apartment';
+      return 'Lägenhet';
     case 'house':
-      return 'House';
+      return 'Hus';
     case 'plot':
-      return 'Plot';
+      return 'Tomt';
     case 'commercial':
-      return 'Commercial';
+      return 'Kommersiell';
     case 'new-devs':
-      return 'New Devs';
+      return 'Nybygge';
     case 'short-term':
-      return 'Short-term';
+      return 'Korttid';
     case 'long-term':
-      return 'Long-term';
+      return 'Långtid';
     case 'penthouse':
-      return 'Penthouse';
+      return 'Takvåning';
     case 'ground-floor':
-      return 'Ground Floor';
+      return 'Bottenvåning';
     case 'duplex':
       return 'Duplex';
     case 'any':
-      return 'All types';
+      return 'Alla typer';
     default:
-      return type || 'All types';
+      return type || 'Alla typer';
   }
 };

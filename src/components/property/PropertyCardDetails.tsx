@@ -96,14 +96,14 @@ export const PropertyCardDetails = ({
           <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
             <div className="text-center">
               <div className="text-lg font-bold text-blue-800">{property.bedrooms}</div>
-              <div className="text-xs text-blue-600 uppercase tracking-wide">Beds</div>
+              <div className="text-xs text-blue-600 uppercase tracking-wide">Sängr</div>
             </div>
           </div>
           
           <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
             <div className="text-center">
               <div className="text-lg font-bold text-blue-800">{property.bathrooms}</div>
-              <div className="text-xs text-blue-600 uppercase tracking-wide">Baths</div>
+              <div className="text-xs text-blue-600 uppercase tracking-wide">Badrum</div>
             </div>
           </div>
           
@@ -117,7 +117,7 @@ export const PropertyCardDetails = ({
                 })()}
               </div>
               <div className="text-xs text-blue-600 uppercase tracking-wide">
-                {property.propertyType?.toLowerCase().startsWith('plot') ? 'm² Plot' : 'm² Built'}
+                {property.propertyType?.toLowerCase().startsWith('plot') ? 'm² Tomt' : 'm² Byggd'}
               </div>
             </div>
           </div>

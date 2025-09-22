@@ -143,7 +143,7 @@ const RentProperties = () => {
     return (
       <div className="min-h-screen bg-gray-50">
         <PropertyListingHeader 
-          title="Discover rental properties on the Costa del Sol"
+          title="Upptäck hyresfastigheter på Costa del Sol"
         />
 
         <div className="container-custom py-8 pb-24">
@@ -153,12 +153,12 @@ const RentProperties = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/">HOME</Link>
+                    <Link to="/">HEM</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>RENT</BreadcrumbPage>
+                  <BreadcrumbPage>HYR</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -172,7 +172,7 @@ const RentProperties = () => {
 
           {/* Search Results Count for Mobile */}
           <div className="text-sm text-gray-600 flex items-center mb-4">
-            Showing <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">rental properties</span>
+            Visar <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">hyresfastigheter</span>
           </div>
 
           {/* Results */}
@@ -224,7 +224,7 @@ const RentProperties = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <PropertyListingHeader 
-        title="Discover rental properties on the Costa del Sol"
+        title="Upptäck hyresfastigheter på Costa del Sol"
       />
 
       <div className="container-custom py-8">
@@ -237,12 +237,12 @@ const RentProperties = () => {
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link to="/">HOME</Link>
+                      <Link to="/">HEM</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
-                    <BreadcrumbPage>RENT</BreadcrumbPage>
+                    <BreadcrumbPage>HYR</BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
@@ -266,7 +266,7 @@ const RentProperties = () => {
             {/* Top Controls - Search Results Count */}
             <div className="flex justify-between items-center mb-6">
               <div className="text-sm text-gray-600 flex items-center">
-                Showing <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">rental properties</span>
+                Visar <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">hyresfastigheter</span>
               </div>
             </div>
 

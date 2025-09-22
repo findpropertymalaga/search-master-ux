@@ -4,18 +4,18 @@ const HowItWorksSection = () => {
   const steps = [
     {
       number: '1',
-      title: 'Find a property to buy or rent',
-      description: 'Browse our extensive portfolio of premium properties across Costa del Sol. Use our advanced filters to find the perfect home that matches your budget, location preferences, and lifestyle needs.'
+      title: 'Hitta en fastighet att köpa eller hyra',
+      description: 'Bläddra bland vår omfattande portfölj av premiefastigheter över hela Costa del Sol. Använd våra avancerade filter för att hitta det perfekta hemmet som matchar din budget, platsönskemål och livsstilsbehov.'
     },
     {
       number: '2', 
-      title: 'Get in touch!',
-      description: 'Contact our experienced team of property specialists who will guide you through the entire process. We provide personalized advice and schedule viewings at your convenience.'
+      title: 'Kontakta oss!',
+      description: 'Kontakta vårt erfarna team av fastighetsspecialister som kommer att guida dig genom hela processen. Vi ger personlig rådgivning och bokar visningar när det passar dig.'
     },
     {
       number: '3',
-      title: 'We\'ll arrange everything',
-      description: 'From purchase negotiations to rental contracts, our experienced legal advisors handle all paperwork and formalities. Enjoy a seamless, stress-free property acquisition process.'
+      title: 'Vi ordnar allt',
+      description: 'Från köpförhandlingar till hyreskontrakt hanterar våra erfarna juridiska rådgivare all pappersarbete och formaliteter. Njut av en smidig, stressfri fastighetsförvärvsprocess.'
     }
   ];
 
@@ -24,11 +24,11 @@ const HowItWorksSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-6">
-            How it Works
+            Så här fungerar det
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Your journey to finding the perfect property on Costa del Sol starts here. 
-            We make the process simple, transparent, and stress-free.
+            Din resa till att hitta den perfekta fastigheten på Costa del Sol börjar här. 
+            Vi gör processen enkel, transparent och stressfri.
           </p>
         </div>
 

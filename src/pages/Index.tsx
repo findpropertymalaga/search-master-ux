@@ -21,18 +21,18 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-4">
-                Explore Costa del Sol
+                Utforska Costa del Sol
               </h2>
               <p className="text-gray-600 mb-6">
-                Costa del Sol stretches along Spain's southern coast in the Andalusia region 
-                and offers a perfect blend of Mediterranean climate, beautiful beaches and rich cultural experience.
+                Costa del Sol sträcker sig längs Spaniens sydkust i regionen Andalusien 
+                och erbjuder en perfekt blandning av medelhavsklimat, vackra stränder och rik kulturell upplevelse.
               </p>
               <p className="text-gray-600 mb-6">
-                From the glamorous resorts of Marbella to the charming old town of Estepona, this region offers 
-                a diverse range of properties for those seeking their dream home under the sun.
+                Från de glamorösa resorterna i Marbella till den charmiga gamla staden Estepona erbjuder denna region 
+                ett brett utbud av fastigheter för dem som söker sitt drömhem under solen.
               </p>
               <p className="text-gray-600">
-                Here you'll also find popular areas like Benalmádena – perfect for those who want to buy property in Spain with genuine Andalusian small-town charm – and nearby Málaga, a dynamic city that combines beach life, culture and urban amenities.
+                Här hittar du också populära områden som Benalmádena – perfekt för dem som vill köpa fastighet i Spanien med äkta andalusisk småstadscharm – och närliggande Málaga, en dynamisk stad som kombinerar strandliv, kultur och urbana bekvämligheter.
               </p>
             </div>
             <div className="relative h-72 rounded-lg overflow-hidden md:h-96">
@@ -49,24 +49,24 @@ const Index = () => {
       {/* Benefits */}
       <div className="container-custom py-16">
         <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-8 text-center">
-          Why choose Costa del Sol?
+          Varför välja Costa del Sol?
         </h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              title: 'Perfect climate',
-              description: 'Over 300 days of sunshine per year — Costa del Sol offers one of Europe\'s best climates.',
+              title: 'Perfekt klimat',
+              description: 'Över 300 soldagar per år — Costa del Sol erbjuder ett av Europas bästa klimat.',
               icon: '☀️'
             },
             {
-              title: 'World-class facilities',
-              description: 'From championship golf courses to luxury properties — enjoy the best of Mediterranean living.',
+              title: 'Världsklass faciliteter',
+              description: 'Från mästerskapsgolfbanor till lyxfastigheter — njut av det bästa av medelhavsliv.',
               icon: '⛳'
             },
             {
-              title: 'Safe investment',
-              description: 'Properties on Costa del Sol continue to be a safe investment with stable value growth.',
+              title: 'Säker investering',
+              description: 'Fastigheter på Costa del Sol fortsätter att vara en säker investering med stabil värdetillväxt.',
               icon: '📈'
             },
           ].map((benefit, index) => (
@@ -86,20 +86,20 @@ const Index = () => {
       <div className="bg-white py-16" data-section="why-buy-with-us">
         <div className="container-custom">
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 mb-8 text-center">
-            Get to Know Us!
+            Lär känna oss!
           </h2>
           
           <div className="bg-costa-50 p-8 rounded-lg">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="col-span-2">
                 <p className="text-gray-600 mb-4">
-                  With over 10 years of experience in Costa del Sol's property market, we have become a trusted team for buyers and investors who want expert advice and smart opportunities.
+                  Med över 10 års erfarenhet av fastighetsmarknaden på Costa del Sol har vi blivit ett pålitligt team för köpare och investerare som vill ha expertråd och smarta möjligheter.
                 </p>
                 <p className="text-gray-600 mb-4">
-                  Thanks to our practical experience in both sales and short-term rentals, we truly know this region — from promising investment locations to everyday life.
+                  Tack vare vår praktiska erfarenhet inom både försäljning och korttidsuthyrning känner vi verkligen denna region — från lovande investeringsplatser till vardagsliv.
                 </p>
                 <p className="text-gray-600">
-                  Whether you're looking for returns, a second home or better quality of life by the sea — we're here to guide you through every step. Our experienced legal advisors handle all paperwork, formalities, and make sure the due diligence is properly conducted to ensure a safe and transparent transaction.
+                  Oavsett om du letar efter avkastning, ett andrahem eller bättre livskvalitet vid havet — vi är här för att guida dig genom varje steg. Våra erfarna juridiska rådgivare hanterar all pappersarbete, formaliteter och ser till att due diligence utförs korrekt för att säkerställa en trygg och transparent transaktion.
                 </p>
               </div>
               <div className="flex flex-col items-center">

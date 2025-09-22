@@ -42,14 +42,14 @@ const Footer = () => {
     modal.innerHTML = `
       <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
         <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="this.closest('.fixed').remove()">×</button>
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900">Stay Updated</h2>
-        <p class="text-gray-600 mb-6">Subscribe to receive the latest property updates and market insights.</p>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-900">Håll dig uppdaterad</h2>
+        <p class="text-gray-600 mb-6">Prenumerera för att få de senaste fastighetsuppdateringarna och marknadsinsikterna.</p>
         <form id="newsletter-form" class="space-y-4">
           <div>
             <input 
               type="email" 
               id="email" 
-              placeholder="Enter your email address"
+              placeholder="Ange din e-postadress"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             >
@@ -58,7 +58,7 @@ const Footer = () => {
             type="submit"
             class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
           >
-            Subscribe Now
+            Prenumerera nu
           </button>
         </form>
         <div id="form-message" class="mt-4 text-center hidden"></div>
@@ -86,16 +86,16 @@ const Footer = () => {
           });
 
           if (response.ok) {
-            messageDiv!.textContent = 'Thank you for subscribing! We\'ll keep you updated.';
+            messageDiv!.textContent = 'Tack för din prenumeration! Vi håller dig uppdaterad.';
             messageDiv!.className = 'mt-4 text-center text-green-600 font-medium';
             (form as HTMLFormElement).style.display = 'none';
           } else {
-            messageDiv!.textContent = 'Something went wrong. Please try again.';
+            messageDiv!.textContent = 'Något gick fel. Försök igen.';
             messageDiv!.className = 'mt-4 text-center text-red-600 font-medium';
           }
         } catch (error) {
           console.error('Newsletter subscription error:', error);
-          messageDiv!.textContent = 'Something went wrong. Please try again.';
+          messageDiv!.textContent = 'Något gick fel. Försök igen.';
           messageDiv!.className = 'mt-4 text-center text-red-600 font-medium';
         }
         messageDiv!.classList.remove('hidden');
@@ -117,7 +117,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-serif font-medium mb-4">FindProperty®</h3>
             <p className="text-navy-100 mb-4">
-              Real advice. Real homes. Costa del Sol.
+              Riktiga råd. Riktiga hem. Costa del Sol.
             </p>
             <p className="text-navy-100">
               Estepona - Marbella - Fuengirola - Benalmádena - Torremolinos - Málaga
@@ -125,11 +125,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-serif font-medium mb-4">Quick Links</h3>
+            <h3 className="text-xl font-serif font-medium mb-4">Snabblänkar</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-navy-100 hover:text-white transition-colors">
-                  Home
+                  Hem
                 </Link>
               </li>
               <li>
@@ -150,7 +150,7 @@ const Footer = () => {
                     }
                   }}
                 >
-                  Buy
+                  Köp
                 </Link>
               </li>
               <li>
@@ -171,7 +171,7 @@ const Footer = () => {
                     }
                   }}
                 >
-                  Rent
+                  Hyr
                 </Link>
               </li>
               <li>
@@ -179,7 +179,7 @@ const Footer = () => {
                   onClick={handleAboutClick}
                   className="text-navy-100 hover:text-white transition-colors text-left"
                 >
-                  About
+                  Om oss
                 </button>
               </li>
               <li>
@@ -187,22 +187,22 @@ const Footer = () => {
                   onClick={handleNewsletterClick}
                   className="text-navy-100 hover:text-white transition-colors text-left"
                 >
-                  Subscribe to Newsletter
+                  Prenumerera på nyhetsbrev
                 </button>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-serif font-medium mb-4">Contact</h3>
+            <h3 className="text-xl font-serif font-medium mb-4">Kontakt</h3>
             <p className="text-navy-100 mb-2">
-              Email: hello@findproperty.es
+              E-post: hello@findproperty.es
             </p>
             <p className="text-navy-100 mb-2">
-              Phone: +34 691 91 60 10
+              Telefon: +34 691 91 60 10
             </p>
             <p className="text-navy-100">
-              Address: Avenida Aguamarina 66, 29631 Benalmádena (Málaga)
+              Adress: Avenida Aguamarina 66, 29631 Benalmádena (Málaga)
             </p>
           </div>
         </div>
@@ -251,9 +251,9 @@ const Footer = () => {
 
             <div className="text-center text-navy-200">
               <p className="mb-4">
-                FindProperty® is your trusted gateway to properties and investment opportunities on the Costa del Sol. For short-term rental management, <a href="https://bnbhelper.es/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-navy-100 transition-colors">BnBHelper®</a> has been helping property owners and investors maximize returns since 2016. Both brands are part of Lingonberry Group, bringing deep expertise and a results-driven approach to real estate sales and rentals.
+                FindProperty® är din pålitliga ingång till fastigheter och investeringsmöjligheter på Costa del Sol. För korttidsuthyrning har <a href="https://bnbhelper.es/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-navy-100 transition-colors">BnBHelper®</a> hjälpt fastighetsägare och investerare att maximera avkastning sedan 2016. Båda varumärkena är del av Lingonberry Group och bidrar med djup expertis och ett resultatdrivet tillvägagångssätt för fastighetsförsäljning och uthyrning.
               </p>
-              <p className="mb-4">Real advice. Real homes. Costa del Sol.™</p>
+              <p className="mb-4">Riktiga råd. Riktiga hem. Costa del Sol.™</p>
               
               {/* Mobile: Lingonberry Group logo after Costa del Sol.™ */}
               <div className="md:hidden flex justify-center mb-4">
