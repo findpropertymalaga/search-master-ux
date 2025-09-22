@@ -1,0 +1,10 @@
+project_id = "iuolqlhuiwffgnoaelpg"
+
+[functions.newsletter-signup]
+verify_jwt = false
+
+[functions.send-newsletter-subscription]
+verify_jwt = false
+
+[functions.send-property-inquiry]
+verify_jwt = false
