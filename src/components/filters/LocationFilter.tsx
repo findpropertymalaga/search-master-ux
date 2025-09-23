@@ -54,15 +54,15 @@ const LocationFilter = ({ value, onChange, isHomePage = false, triggerClassName,
   if (loading) {
     return (
       <div>
-        <label className="text-sm font-medium text-gray-600 mb-3 block">Locations</label>
-        <div className="text-gray-500 text-sm">Loading locations...</div>
+        <label className="text-sm font-medium text-gray-600 mb-3 block">Platser</label>
+        <div className="text-gray-500 text-sm">Laddar platser...</div>
       </div>
     );
   }
 
   return (
     <div>
-      <label className="text-sm font-medium text-gray-600 mb-3 block">Locations</label>
+      <label className="text-sm font-medium text-gray-600 mb-3 block">Platser</label>
       <div className="space-y-3">
         {availableLocations.map((location) => {
           const isChecked = value.includes(location);
@@ -80,7 +80,7 @@ const LocationFilter = ({ value, onChange, isHomePage = false, triggerClassName,
           );
         })}
         {availableLocations.length === 0 && (
-          <div className="text-gray-500 text-sm">No locations available</div>
+          <div className="text-gray-500 text-sm">Inga platser tillgängliga</div>
         )}
       </div>
     </div>

@@ -42,16 +42,16 @@ const PropertyMobileControls = ({
   const [selectedOption, setSelectedOption] = useState<SortOption | null>(null);
 
   const sortOptions = [
-    { value: 'published' as const, label: 'Most recently updated' },
-    { value: 'price-asc' as const, label: 'Price: low to high' },
-    { value: 'price-desc' as const, label: 'Price: high to low' },
-    { value: 'size-asc' as const, label: 'Size: low to high' },
-    { value: 'size-desc' as const, label: 'Size: high to low' },
+    { value: 'published' as const, label: 'Senast uppdaterad' },
+    { value: 'price-asc' as const, label: 'Pris: låg till hög' },
+    { value: 'price-desc' as const, label: 'Pris: hög till låg' },
+    { value: 'size-asc' as const, label: 'Storlek: liten till stor' },
+    { value: 'size-desc' as const, label: 'Storlek: stor till liten' },
   ];
 
   const getCurrentSortLabel = () => {
     const option = sortOptions.find(opt => opt.value === sortOrder);
-    return option?.label || 'Sort';
+    return option?.label || 'Sortera';
   };
 
   const getSortIcon = () => {
