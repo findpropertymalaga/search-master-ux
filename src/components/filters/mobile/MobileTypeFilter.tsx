@@ -54,25 +54,25 @@ const MobileTypeFilter = ({ value, onChange, isRentalPage = false }: MobileTypeF
   const getTypeOptions = (): Option[] => {
     if (isRentalPage) {
       return [
-        { value: 'any', label: 'All' },
-        { value: 'apartment', label: 'Apartment' },
-        { value: 'house', label: 'House' },
+        { value: 'any', label: 'Alla' },
+        { value: 'apartment', label: 'Lägenhet' },
+        { value: 'house', label: 'Hus' },
         { value: 'duplex', label: 'Duplex' },
-        { value: 'penthouse', label: 'Penthouse' },
-        { value: 'ground-floor', label: 'Ground Floor' },
-        { value: 'commercial', label: 'Commercial' }
+        { value: 'penthouse', label: 'Takvåning' },
+        { value: 'ground-floor', label: 'Bottenvåning' },
+        { value: 'commercial', label: 'Kommersiell' }
       ];
     }
 
     const has = (prefix: string) => availableTypes.some((t) => t?.startsWith(prefix));
 
-    const options: Option[] = [{ value: 'any', label: 'All' }];
-    if (has('Apartment -')) options.push({ value: 'apartment', label: 'Apartment' });
-    if (has('House -')) options.push({ value: 'house', label: 'House' });
-    if (has('Plot -')) options.push({ value: 'plot', label: 'Plot' });
-    if (has('Commercial -')) options.push({ value: 'commercial', label: 'Commercial' });
+    const options: Option[] = [{ value: 'any', label: 'Alla' }];
+    if (has('Apartment -')) options.push({ value: 'apartment', label: 'Lägenhet' });
+    if (has('House -')) options.push({ value: 'house', label: 'Hus' });
+    if (has('Plot -')) options.push({ value: 'plot', label: 'Tomt' });
+    if (has('Commercial -')) options.push({ value: 'commercial', label: 'Kommersiell' });
     // Keep consistent with desktop
-    options.push({ value: 'new-devs', label: 'New Devs' });
+    options.push({ value: 'new-devs', label: 'Nybygge' });
     return options;
   };
 
@@ -108,7 +108,7 @@ const MobileTypeFilter = ({ value, onChange, isRentalPage = false }: MobileTypeF
 
   return (
     <div>
-      <h3 className="text-sm font-semibold text-white mb-3">Type</h3>
+      <h3 className="text-sm font-semibold text-white mb-3">Typ</h3>
       <div className="flex gap-2 flex-wrap">
         {typeOptions.map((opt) => (
           <button

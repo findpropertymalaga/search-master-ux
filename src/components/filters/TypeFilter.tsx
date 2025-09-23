@@ -69,12 +69,12 @@ const TypeFilter = ({ value, onChange, isRentalPage = false }: TypeFilterProps) 
     if (isRentalPage) {
       return [
         { value: 'any', label: 'All' },
-        { value: 'apartment', label: 'Apartment' },
-        { value: 'house', label: 'House' },
+        { value: 'apartment', label: 'Lägenhet' },
+        { value: 'house', label: 'Hus' },
         { value: 'duplex', label: 'Duplex' },
-        { value: 'penthouse', label: 'Penthouse' },
-        { value: 'ground-floor', label: 'Ground Floor' },
-        { value: 'commercial', label: 'Commercial' }
+        { value: 'penthouse', label: 'Takvåning' },
+        { value: 'ground-floor', label: 'Bottenvåning' },
+        { value: 'commercial', label: 'Kommersiell' }
       ];
     }
 
@@ -101,16 +101,16 @@ const TypeFilter = ({ value, onChange, isRentalPage = false }: TypeFilterProps) 
       type.startsWith('Commercial -')
     );
     
-    if (hasApartments) groupedTypes.push({ value: 'apartment', label: 'Apartment' });
-    if (hasHouses) groupedTypes.push({ value: 'house', label: 'House' });
-    if (hasPlots) groupedTypes.push({ value: 'plot', label: 'Plot' });
-    if (hasCommercial) groupedTypes.push({ value: 'commercial', label: 'Commercial' });
+    if (hasApartments) groupedTypes.push({ value: 'apartment', label: 'Lägenhet' });
+    if (hasHouses) groupedTypes.push({ value: 'house', label: 'Hus' });
+    if (hasPlots) groupedTypes.push({ value: 'plot', label: 'Tomt' });
+    if (hasCommercial) groupedTypes.push({ value: 'commercial', label: 'Kommersiell' });
     
     // Add New Devs option for buy page
-    groupedTypes.push({ value: 'new-devs', label: 'New Devs' });
+    groupedTypes.push({ value: 'new-devs', label: 'Nybygge' });
     
     return [
-      { value: 'any', label: 'All' },
+      { value: 'any', label: 'Alla' },
       ...groupedTypes
     ];
   };

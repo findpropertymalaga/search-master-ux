@@ -58,13 +58,13 @@ const HeroTypeFilter = ({ value, onChange, isRentalPage = false }: HeroTypeFilte
   const getTypeOptions = () => {
     if (isRentalPage) {
       return [
-        { value: 'any', label: 'All types' },
-        { value: 'apartment', label: 'Apartment' },
-        { value: 'house', label: 'House' },
+        { value: 'any', label: 'Alla typer' },
+        { value: 'apartment', label: 'Lägenhet' },
+        { value: 'house', label: 'Hus' },
         { value: 'duplex', label: 'Duplex' },
-        { value: 'penthouse', label: 'Penthouse' },
-        { value: 'ground-floor', label: 'Ground Floor' },
-        { value: 'commercial', label: 'Commercial' }
+        { value: 'penthouse', label: 'Takvåning' },
+        { value: 'ground-floor', label: 'Bottenvåning' },
+        { value: 'commercial', label: 'Kommersiell' }
       ];
     }
 
@@ -91,13 +91,13 @@ const HeroTypeFilter = ({ value, onChange, isRentalPage = false }: HeroTypeFilte
       type.startsWith('Commercial -')
     );
     
-    if (hasApartments) groupedTypes.push({ value: 'apartment', label: 'Apartment' });
-    if (hasHouses) groupedTypes.push({ value: 'house', label: 'House' });
-    if (hasPlots) groupedTypes.push({ value: 'plot', label: 'Plot' });
-    if (hasCommercial) groupedTypes.push({ value: 'commercial', label: 'Commercial' });
+    if (hasApartments) groupedTypes.push({ value: 'apartment', label: 'Lägenhet' });
+    if (hasHouses) groupedTypes.push({ value: 'house', label: 'Hus' });
+    if (hasPlots) groupedTypes.push({ value: 'plot', label: 'Tomt' });
+    if (hasCommercial) groupedTypes.push({ value: 'commercial', label: 'Kommersiell' });
     
     return [
-      { value: 'any', label: 'All types' },
+      { value: 'any', label: 'Alla typer' },
       ...groupedTypes
     ];
   };
@@ -105,14 +105,14 @@ const HeroTypeFilter = ({ value, onChange, isRentalPage = false }: HeroTypeFilte
   const typeOptions = getTypeOptions();
 
   const getTypeDisplayText = () => {
-    if (!value || value === 'any') return "All types";
+    if (!value || value === 'any') return "Alla typer";
     if (Array.isArray(value)) {
-      if (value.length === 0) return "All types";
+      if (value.length === 0) return "Alla typer";
       if (value.length === 1) {
         const option = typeOptions.find(opt => opt.value === value[0]);
         return option ? option.label : value[0];
       }
-      return `${value.length} types selected`;
+      return `${value.length} typer valda`;
     }
     const option = typeOptions.find(opt => opt.value === value);
     return option ? option.label : value;
