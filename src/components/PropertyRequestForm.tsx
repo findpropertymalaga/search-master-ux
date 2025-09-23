@@ -152,7 +152,7 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
           className="w-full bg-costa-600 hover:bg-costa-700"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Skickar..." : "Begär information"}
+          {isSubmitting ? "Skickar..." : "Begär Information"}
         </Button>
         
         {/* CEO Message and Image */}

@@ -93,12 +93,12 @@ export const PropertyListingHeader = ({
     <div className="bg-white py-12">
       <div className="container-custom">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-normal text-black">
-          Sign up to our <button 
+          Registrera dig för vårt <button 
             onClick={handleSubscribeClick}
             className="text-navy-600 hover:text-navy-700 underline cursor-pointer"
           >
-            newsletter
-          </button> for curated property updates and insights.
+            nyhetsbrev
+          </button> för utvalda fastighetsuppdateringar och insikter.
         </h1>
       </div>
     </div>

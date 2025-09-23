@@ -17,7 +17,7 @@ const PropertyCheckboxFilters = ({ currentFilters, onFilterChange }: PropertyChe
 
   return (
     <div className="space-y-4">
-      <h3 className="text-sm font-semibold text-navy-800 mb-3">Property Features</h3>
+      <h3 className="text-sm font-semibold text-navy-800 mb-3">Fastighetsfunktioner</h3>
       
       <div className="space-y-3">
         <div className="flex items-center space-x-2">
@@ -30,7 +30,7 @@ const PropertyCheckboxFilters = ({ currentFilters, onFilterChange }: PropertyChe
             htmlFor="has_pool"
             className="text-sm font-medium text-navy-800 cursor-pointer"
           >
-            Swimming Pool
+            Pool
           </label>
         </div>
 
@@ -44,7 +44,7 @@ const PropertyCheckboxFilters = ({ currentFilters, onFilterChange }: PropertyChe
             htmlFor="has_garden"
             className="text-sm font-medium text-navy-800 cursor-pointer"
           >
-            Garden
+            Trädgård
           </label>
         </div>
 

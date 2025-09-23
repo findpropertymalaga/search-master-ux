@@ -1,6 +1,6 @@
 
 export const bedroomOptions = [
-  { value: 'any', label: 'All' },
+  { value: 'any', label: 'Alla' },
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
@@ -9,7 +9,7 @@ export const bedroomOptions = [
 ];
 
 export const bathroomOptions = [
-  { value: 'any', label: 'All' },
+  { value: 'any', label: 'Alla' },
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
