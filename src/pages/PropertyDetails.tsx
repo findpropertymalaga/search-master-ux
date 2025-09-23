@@ -268,7 +268,7 @@ const PropertyDetails = () => {
             className="flex items-center text-costa-600 hover:text-costa-700 transition-colors"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Search
+            Tillbaka till sökning
           </button>
 
           {/* Previous/Next navigation */}
@@ -279,12 +279,12 @@ const PropertyDetails = () => {
                 className="flex items-center px-3 py-2 text-sm text-costa-600 hover:text-costa-700 hover:bg-costa-50 rounded-md transition-colors"
               >
                 <ChevronLeft className="mr-1 h-4 w-4" />
-                Previous
+                Föregående
               </Link>
             ) : (
               <span className="flex items-center px-3 py-2 text-sm text-gray-400 cursor-not-allowed">
                 <ChevronLeft className="mr-1 h-4 w-4" />
-                Previous
+                Föregående
               </span>
             )}
             
@@ -293,12 +293,12 @@ const PropertyDetails = () => {
                 to={`/properties/${nextPropertyId}`}
                 className="flex items-center px-3 py-2 text-sm text-costa-600 hover:text-costa-700 hover:bg-costa-50 rounded-md transition-colors"
               >
-                Next
+                Nästa
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
             ) : (
               <span className="flex items-center px-3 py-2 text-sm text-gray-400 cursor-not-allowed">
-                Next
+                Nästa
                 <ChevronRight className="ml-1 h-4 w-4" />
               </span>
             )}
@@ -330,7 +330,7 @@ const PropertyDetails = () => {
             
             <div className="space-y-6">
               <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 sticky top-4">
-                <h3 className="text-xl font-semibold mb-4">Request Information</h3>
+                <h3 className="text-xl font-semibold mb-4">Begär Information</h3>
                 <PropertyRequestForm 
                   propertyId={property.id}
                   propertyTitle={property.title}

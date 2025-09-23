@@ -21,7 +21,7 @@ export const PropertyMapModal = ({ properties }: PropertyMapModalProps) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-secondary hover:text-secondary-foreground h-10 px-4 py-2">
-          Show on Map
+          Visa på karta
         </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[625px]">

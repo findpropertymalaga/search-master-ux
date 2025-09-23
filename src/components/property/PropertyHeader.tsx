@@ -61,11 +61,11 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
             </div>
           ) : property.price > 0 ? (
             <>
-              <span className="text-lg font-normal mr-1">{isRental ? 'From' : 'Asking price'}</span>
+              <span className="text-lg font-normal mr-1">{isRental ? 'Från' : 'Utropspris'}</span>
               {formatPrice(property.price)}
             </>
           ) : (
-            <span className="text-lg font-normal">Price upon request</span>
+            <span className="text-lg font-normal">Pris på begäran</span>
           )}
         </div>
       </div>
@@ -80,10 +80,10 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
           <button
             onClick={handleShowOnMap}
             className="flex items-center text-costa-600 hover:text-costa-700 transition-colors text-sm"
-            title="Show on Google Maps"
+            title="Visa på Google Maps"
           >
             <ExternalLink className="h-4 w-4 mr-1" />
-            Show on map
+            Visa på karta
           </button>
         )}
       </div>
