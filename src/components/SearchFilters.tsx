@@ -94,13 +94,13 @@ const SearchFilters = ({ onFilter, currentFilters, isHomePage = false }: SearchF
         />
 
         <RoomFilter 
-          label="Bedrooms"
+          label="Sovrum"
           value={filters.bedrooms} 
           onChange={(value) => handleSelectChange('bedrooms', value)}
         />
 
         <RoomFilter 
-          label="Bathrooms"
+          label="Badrum"
           value={filters.bathrooms} 
           onChange={(value) => handleSelectChange('bathrooms', value)}
         />

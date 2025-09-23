@@ -160,7 +160,7 @@ const TypeFilter = ({ value, onChange, isRentalPage = false }: TypeFilterProps) 
 
   return (
     <div>
-      <label className="text-sm font-medium text-gray-600 mb-3 block">Type</label>
+      <label className="text-sm font-medium text-gray-600 mb-3 block">Typ</label>
       <div className="flex gap-2 flex-wrap">
         {typeOptions.map((option) => (
           <button

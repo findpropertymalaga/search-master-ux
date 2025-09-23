@@ -40,7 +40,7 @@ const PropertySidebarFilters = ({ onFilterChange, currentFilters, isRentalPage =
 
         {/* Bedrooms Filter */}
         <MultipleSelectionFilter
-          label="Bedrooms"
+          label="Sovrum"
           value={currentFilters.bedrooms}
           options={bedroomOptions}
           onChange={(value) => onFilterChange({...currentFilters, bedrooms: value})}
@@ -48,7 +48,7 @@ const PropertySidebarFilters = ({ onFilterChange, currentFilters, isRentalPage =
 
         {/* Bathrooms Filter */}
         <MultipleSelectionFilter
-          label="Bathrooms"
+          label="Badrum"
           value={currentFilters.bathrooms}
           options={bathroomOptions}
           onChange={(value) => onFilterChange({...currentFilters, bathrooms: value})}
