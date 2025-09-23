@@ -93,14 +93,14 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
         <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
           <div className="text-center">
             <div className="text-lg font-bold text-blue-800">{property.bedrooms}</div>
-            <div className="text-xs text-blue-600 uppercase tracking-wide">Beds</div>
+            <div className="text-xs text-blue-600 uppercase tracking-wide">Sovrum</div>
           </div>
         </div>
         
         <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
           <div className="text-center">
             <div className="text-lg font-bold text-blue-800">{property.bathrooms}</div>
-            <div className="text-xs text-blue-600 uppercase tracking-wide">Baths</div>
+            <div className="text-xs text-blue-600 uppercase tracking-wide">Badrum</div>
           </div>
         </div>
         
@@ -110,7 +110,7 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
               {property.propertyType?.toLowerCase().startsWith('plot') && property.plotSize ? property.plotSize : property.size}
             </div>
             <div className="text-xs text-blue-600 uppercase tracking-wide">
-              {property.propertyType?.toLowerCase().startsWith('plot') ? 'm² Plot' : 'm² Built'}
+              {property.propertyType?.toLowerCase().startsWith('plot') ? 'm² Tomt' : 'm² Byggd'}
             </div>
           </div>
         </div>
@@ -125,12 +125,12 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
         )}
         {property.pool === true && (
           <Badge variant="outline" className="bg-blue-50 text-blue-800 rounded-full">
-            Pool
+            Bassäng
           </Badge>
         )}
         {property.plotSize > 0 && (
           <Badge variant="outline" className="bg-blue-50 text-blue-800 rounded-full">
-            Plot {property.plotSize} m²
+            Tomt {property.plotSize} m²
           </Badge>
         )}
         {/* Show property reference or ID, but not both to avoid duplicates */}
