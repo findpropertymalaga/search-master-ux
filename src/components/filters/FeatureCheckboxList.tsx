@@ -11,7 +11,7 @@ interface FeatureCheckboxListProps {
 const FeatureCheckboxList = ({ currentFilters, onFeatureChange }: FeatureCheckboxListProps) => {
   return (
     <div>
-      <h3 className="text-sm font-medium text-gray-600 mb-3 block">Egenskaper</h3>
+      <h3 className="text-sm font-medium text-gray-600 mb-3 block">Features</h3>
       <div className="space-y-3">
         {featureOptions.map((feature) => {
           // Handle the new feature keys properly by accessing them as dynamic properties

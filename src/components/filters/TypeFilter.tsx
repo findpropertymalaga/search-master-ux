@@ -69,12 +69,12 @@ const TypeFilter = ({ value, onChange, isRentalPage = false }: TypeFilterProps) 
     if (isRentalPage) {
       return [
         { value: 'any', label: 'All' },
-        { value: 'apartment', label: 'Lägenhet' },
-        { value: 'house', label: 'Hus' },
+        { value: 'apartment', label: 'Apartment' },
+        { value: 'house', label: 'House' },
         { value: 'duplex', label: 'Duplex' },
-        { value: 'penthouse', label: 'Takvåning' },
-        { value: 'ground-floor', label: 'Bottenvåning' },
-        { value: 'commercial', label: 'Kommersiell' }
+        { value: 'penthouse', label: 'Penthouse' },
+        { value: 'ground-floor', label: 'Ground floor' },
+        { value: 'commercial', label: 'Commercial' }
       ];
     }
 
@@ -101,16 +101,16 @@ const TypeFilter = ({ value, onChange, isRentalPage = false }: TypeFilterProps) 
       type.startsWith('Commercial -')
     );
     
-    if (hasApartments) groupedTypes.push({ value: 'apartment', label: 'Lägenhet' });
-    if (hasHouses) groupedTypes.push({ value: 'house', label: 'Hus' });
-    if (hasPlots) groupedTypes.push({ value: 'plot', label: 'Tomt' });
-    if (hasCommercial) groupedTypes.push({ value: 'commercial', label: 'Kommersiell' });
+    if (hasApartments) groupedTypes.push({ value: 'apartment', label: 'Apartment' });
+    if (hasHouses) groupedTypes.push({ value: 'house', label: 'House' });
+    if (hasPlots) groupedTypes.push({ value: 'plot', label: 'Plot' });
+    if (hasCommercial) groupedTypes.push({ value: 'commercial', label: 'Commercial' });
     
     // Add New Devs option for buy page
-    groupedTypes.push({ value: 'new-devs', label: 'Nybygge' });
+    groupedTypes.push({ value: 'new-devs', label: 'New development' });
     
     return [
-      { value: 'any', label: 'Alla' },
+      { value: 'any', label: 'All' },
       ...groupedTypes
     ];
   };
@@ -160,7 +160,7 @@ const TypeFilter = ({ value, onChange, isRentalPage = false }: TypeFilterProps) 
 
   return (
     <div>
-      <label className="text-sm font-medium text-gray-600 mb-3 block">Typ</label>
+      <label className="text-sm font-medium text-gray-600 mb-3 block">Type</label>
       <div className="flex gap-2 flex-wrap">
         {typeOptions.map((option) => (
           <button

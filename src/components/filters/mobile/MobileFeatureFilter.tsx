@@ -12,7 +12,7 @@ interface MobileFeatureFilterProps {
 const MobileFeatureFilter = ({ tempFilters, onFeatureChange }: MobileFeatureFilterProps) => {
   return (
     <div>
-      <h3 className="text-sm font-semibold text-white mb-3">Egenskaper</h3>
+      <h3 className="text-sm font-semibold text-white mb-3">Features</h3>
       <div className="space-y-3">
         {featureOptions.map((feature) => {
           // Handle the new feature keys properly by accessing them as dynamic properties

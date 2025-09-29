@@ -48,7 +48,7 @@ const PropertyFeatureFilters = ({ currentFilters, onFilterChange }: PropertyFeat
 
   return (
     <div className="space-y-4">
-      <h3 className="text-sm font-semibold text-navy-800 mb-3">Fastighetsegenskaper</h3>
+      <h3 className="text-sm font-semibold text-navy-800 mb-3">Property Features</h3>
       
       <ScrollArea className="h-64">
         <div className="space-y-3 pr-3">
