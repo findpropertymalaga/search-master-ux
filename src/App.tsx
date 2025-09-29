@@ -3,10 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import PropertyListings from "./pages/PropertyListings";
 import RentProperties from "./pages/RentProperties";
 import PropertyDetails from "./pages/PropertyDetails";
@@ -27,28 +25,6 @@ const queryClient = new QueryClient({
     },
   },
 });
-
-const AppContent = () => {
-  const location = useLocation();
-  const isSearchPage = location.pathname === '/' || location.pathname === '/properties';
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      {!isSearchPage && <Navbar />}
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<PropertyListings />} />
-          <Route path="/properties" element={<PropertyListings />} />
-          <Route path="/rent" element={<RentProperties />} />
-          <Route path="/properties/:id" element={<PropertyDetails />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      {!isSearchPage && <Footer />}
-    </div>
-  );
-};
 
 const App = () => {
   useEffect(() => {
@@ -110,7 +86,16 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <AppContent />
+          <div className="min-h-screen">
+            <Routes>
+              <Route path="/" element={<PropertyListings />} />
+              <Route path="/properties" element={<PropertyListings />} />
+              <Route path="/rent" element={<RentProperties />} />
+              <Route path="/properties/:id" element={<PropertyDetails />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
