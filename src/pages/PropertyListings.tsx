@@ -147,9 +147,6 @@ const PropertyListings = () => {
   if (isMobile) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <PropertyListingHeader 
-          title="Registrera dig för vårt nyhetsbrev för utvalda fastighetsuppdateringar och insikter"
-        />
 
         <div className="container-custom py-8 pb-24">
           {/* Breadcrumb Navigation for Mobile */}
@@ -227,9 +224,6 @@ const PropertyListings = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <PropertyListingHeader 
-        title="Registrera dig för vårt nyhetsbrev för utvalda fastighetsuppdateringar och insikter"
-      />
 
       <div className="container-custom py-8">
         <div className="flex gap-6">
