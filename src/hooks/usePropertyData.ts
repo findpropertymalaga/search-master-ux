@@ -62,10 +62,12 @@ export const usePropertyData = (currentFilters: FilterValues, isInitialized = tr
   }, [isMobile]);
   
   // Use the fetch hook - only initialize when mobile detection is complete
+  const hookInitialized = isInitialized && mobileInitialized && detectedMobile !== null;
+  
   const { state, loadResaleProperties: loadProperties, refs } = useFetchResaleProperties({
     currentFilters,
     sortOrder,
-    isInitialized: isInitialized && mobileInitialized && detectedMobile !== null,
+    isInitialized: hookInitialized,
     ITEMS_PER_PAGE,
     initialPage
   });

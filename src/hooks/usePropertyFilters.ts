@@ -90,7 +90,7 @@ export const usePropertyFilters = () => {
 
   // Load filters from session storage when navigating back to properties or rent page
   useEffect(() => {
-    if (!isInitialized && (location.pathname === '/properties' || location.pathname === '/rent') && mountedRef.current) {
+    if (!isInitialized && (location.pathname === '/properties' || location.pathname === '/rent' || location.pathname === '/') && mountedRef.current) {
       // Check if we came from home page by looking at the referrer or previous navigation
       const urlParams = new URLSearchParams(window.location.search);
       const hasUrlParams = Array.from(urlParams.keys()).length > 0;
@@ -107,7 +107,7 @@ export const usePropertyFilters = () => {
           const parsedFilters = JSON.parse(savedFilters) as FilterValues;
           
           // Check for incompatible filters between buy and rent pages
-          const isOnBuyPage = location.pathname === '/properties';
+          const isOnBuyPage = location.pathname === '/properties' || location.pathname === '/';
           const isOnRentPage = location.pathname === '/rent';
           const hasRentalTypes = parsedFilters.type && (parsedFilters.type.includes('short-term') || parsedFilters.type.includes('long-term'));
           const hasBuyTypes = parsedFilters.type && (parsedFilters.type.includes('apartment') || parsedFilters.type.includes('house') || parsedFilters.type.includes('new-devs') || parsedFilters.type.includes('commercial'));
@@ -135,7 +135,7 @@ export const usePropertyFilters = () => {
 
   // Save current filters to session storage whenever they change
   useEffect(() => {
-    if (isInitialized && (location.pathname === '/properties' || location.pathname === '/rent')) {
+    if (isInitialized && (location.pathname === '/properties' || location.pathname === '/rent' || location.pathname === '/')) {
       // Save current filters to session storage for restoration later
       sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(currentFilters));
       console.log("Saving filters to session storage:", currentFilters);
@@ -145,14 +145,14 @@ export const usePropertyFilters = () => {
   // Clear filters when leaving properties or rent pages
   useEffect(() => {
     const handleBeforeUnload = () => {
-      if (location.pathname !== '/properties' && location.pathname !== '/rent') {
+      if (location.pathname !== '/properties' && location.pathname !== '/rent' && location.pathname !== '/') {
         sessionStorage.removeItem(SESSION_STORAGE_KEY);
         console.log("Clearing filters - left properties/rent page");
       }
     };
 
     // Clear filters immediately if we're not on a properties/rent page
-    if (isInitialized && location.pathname !== '/properties' && location.pathname !== '/rent') {
+    if (isInitialized && location.pathname !== '/properties' && location.pathname !== '/rent' && location.pathname !== '/') {
       sessionStorage.removeItem(SESSION_STORAGE_KEY);
       console.log("Clearing filters - navigated away from properties/rent");
     }
@@ -164,7 +164,7 @@ export const usePropertyFilters = () => {
 
   // This effect ensures filters are properly restored when navigating back to the search page
   useEffect(() => {
-    if (isInitialized && location.pathname === '/properties') {
+    if (isInitialized && (location.pathname === '/properties' || location.pathname === '/')) {
       console.log("Location changed to properties, ensuring filters are restored:", 
         Object.fromEntries(searchParams.entries()));
     }
