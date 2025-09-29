@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Index from "./pages/Index";
 import PropertyListings from "./pages/PropertyListings";
 import RentProperties from "./pages/RentProperties";
 import PropertyDetails from "./pages/PropertyDetails";
@@ -93,7 +92,7 @@ const App = () => {
             <Navbar />
             <main className="flex-grow">
               <Routes>
-                <Route path="/" element={<Index />} />
+                <Route path="/" element={<PropertyListings />} />
                 <Route path="/properties" element={<PropertyListings />} />
                 <Route path="/rent" element={<RentProperties />} />
                 <Route path="/properties/:id" element={<PropertyDetails />} />
