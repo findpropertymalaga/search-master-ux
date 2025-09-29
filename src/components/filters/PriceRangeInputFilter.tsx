@@ -42,14 +42,14 @@ const PriceRangeInputFilter = ({ minPrice, maxPrice, onChange }: PriceRangeInput
 
   return (
     <div>
-      <label className="text-sm font-medium text-gray-600 mb-3 block">Prisintervall</label>
+      <label className="text-sm font-medium text-gray-600 mb-3 block">Price range</label>
       <div className="space-y-3">
         <div className="flex gap-3 items-center">
           <div className="flex-1">
             <Input
               type="text"
               inputMode="numeric"
-              placeholder="Från €"
+              placeholder="From €"
               value={localMinPrice ? formatPrice(localMinPrice) : ''}
               onChange={handleMinPriceChange}
               className="text-sm"
@@ -60,7 +60,7 @@ const PriceRangeInputFilter = ({ minPrice, maxPrice, onChange }: PriceRangeInput
             <Input
               type="text"
               inputMode="numeric"
-              placeholder="Till €"
+              placeholder="To €"
               value={localMaxPrice ? formatPrice(localMaxPrice) : ''}
               onChange={handleMaxPriceChange}
               className="text-sm"
@@ -72,7 +72,7 @@ const PriceRangeInputFilter = ({ minPrice, maxPrice, onChange }: PriceRangeInput
           className="w-full bg-blue-600 hover:bg-blue-700 text-white"
           size="sm"
         >
-          Tillämpa
+          Apply
         </Button>
       </div>
     </div>

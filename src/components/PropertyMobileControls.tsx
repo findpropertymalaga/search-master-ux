@@ -42,16 +42,16 @@ const PropertyMobileControls = ({
   const [selectedOption, setSelectedOption] = useState<SortOption | null>(null);
 
   const sortOptions = [
-    { value: 'published' as const, label: 'Senast uppdaterad' },
-    { value: 'price-asc' as const, label: 'Pris: låg till hög' },
-    { value: 'price-desc' as const, label: 'Pris: hög till låg' },
-    { value: 'size-asc' as const, label: 'Storlek: liten till stor' },
-    { value: 'size-desc' as const, label: 'Storlek: stor till liten' },
+    { value: 'published' as const, label: 'Recently updated' },
+    { value: 'price-asc' as const, label: 'Price: Low to high' },
+    { value: 'price-desc' as const, label: 'Price: High to low' },
+    { value: 'size-asc' as const, label: 'Size: Small to large' },
+    { value: 'size-desc' as const, label: 'Size: Large to small' },
   ];
 
   const getCurrentSortLabel = () => {
     const option = sortOptions.find(opt => opt.value === sortOrder);
-    return option?.label || 'Sortera';
+    return option?.label || 'Sort';
   };
 
   const getSortIcon = () => {
@@ -107,7 +107,7 @@ const PropertyMobileControls = ({
               "flex items-center justify-center gap-2 px-4 py-3 transition-colors border-r border-navy-700 text-white", 
               "hover:bg-navy-800 active:bg-navy-700"
             )}
-            aria-label="Sorteringsalternativ"
+            aria-label="Sort options"
           >
             {getSortIcon()}
           </button>
@@ -148,7 +148,7 @@ const PropertyMobileControls = ({
             ? "bg-costa-600 hover:bg-costa-700" 
             : "hover:bg-navy-800 active:bg-navy-700"
         )}
-        aria-label={showMap ? "Dölj karta" : "Visa karta"}
+        aria-label={showMap ? "Hide map" : "Show map"}
       >
         <Map className="h-5 w-5" />
       </button>

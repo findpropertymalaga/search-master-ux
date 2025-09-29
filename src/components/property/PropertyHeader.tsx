@@ -61,11 +61,11 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
             </div>
           ) : property.price > 0 ? (
             <>
-              <span className="text-lg font-normal mr-1">{isRental ? 'Från' : 'Utropspris'}</span>
+              <span className="text-lg font-normal mr-1">{isRental ? 'From' : 'Asking price'}</span>
               {formatPrice(property.price)}
             </>
           ) : (
-            <span className="text-lg font-normal">Pris på begäran</span>
+            <span className="text-lg font-normal">Price on request</span>
           )}
         </div>
       </div>
@@ -80,10 +80,10 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
           <button
             onClick={handleShowOnMap}
             className="flex items-center text-costa-600 hover:text-costa-700 transition-colors text-sm"
-            title="Visa på Google Maps"
+            title="Show on Google Maps"
           >
             <ExternalLink className="h-4 w-4 mr-1" />
-            Visa på karta
+            Show on map
           </button>
         )}
       </div>
@@ -93,14 +93,14 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
         <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
           <div className="text-center">
             <div className="text-lg font-bold text-blue-800">{property.bedrooms}</div>
-            <div className="text-xs text-blue-600 uppercase tracking-wide">Sovrum</div>
+            <div className="text-xs text-blue-600 uppercase tracking-wide">Bedrooms</div>
           </div>
         </div>
         
         <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
           <div className="text-center">
             <div className="text-lg font-bold text-blue-800">{property.bathrooms}</div>
-            <div className="text-xs text-blue-600 uppercase tracking-wide">Badrum</div>
+            <div className="text-xs text-blue-600 uppercase tracking-wide">Bathrooms</div>
           </div>
         </div>
         
@@ -110,7 +110,7 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
               {property.propertyType?.toLowerCase().startsWith('plot') && property.plotSize ? property.plotSize : property.size}
             </div>
             <div className="text-xs text-blue-600 uppercase tracking-wide">
-              {property.propertyType?.toLowerCase().startsWith('plot') ? 'm² Tomt' : 'm² Byggd'}
+              {property.propertyType?.toLowerCase().startsWith('plot') ? 'm² Plot' : 'm² Built'}
             </div>
           </div>
         </div>
@@ -125,12 +125,12 @@ const PropertyHeader = ({ property, onLocationClick, isRental = false }: Propert
         )}
         {property.pool === true && (
           <Badge variant="outline" className="bg-blue-50 text-blue-800 rounded-full">
-            Bassäng
+            Pool
           </Badge>
         )}
         {property.plotSize > 0 && (
           <Badge variant="outline" className="bg-blue-50 text-blue-800 rounded-full">
-            Tomt {property.plotSize} m²
+            Plot {property.plotSize} m²
           </Badge>
         )}
         {/* Show property reference or ID, but not both to avoid duplicates */}

@@ -30,7 +30,7 @@ const ActiveFilters = ({ currentFilters, onFilterChange }: ActiveFiltersProps) =
           onClick={clearAllFilters}
           className="flex items-center gap-2 bg-white border-costa-300 text-costa-700 hover:bg-costa-50 text-xs relative pr-6"
         >
-          Rensa alla filter
+          Clear all filters
           <span className="absolute -top-1.5 -right-1.5 bg-costa-100 rounded-full p-0.5 hover:bg-costa-200">
             <X className="h-3 w-3" />
           </span>

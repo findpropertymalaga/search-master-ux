@@ -65,7 +65,7 @@ const MobileFilterBadges = ({
       const label = option ? option.label : value;
       badges.push({
         key: `bedrooms-${value}`,
-        label: `${label} sovrum`,
+        label: `${label} bedrooms`,
         onRemove: () => onRemoveFilter('bedrooms', value)
       });
     });
@@ -79,7 +79,7 @@ const MobileFilterBadges = ({
       const label = option ? option.label : value;
       badges.push({
         key: `bathrooms-${value}`,
-        label: `${label} badrum`,
+        label: `${label} bathrooms`,
         onRemove: () => onRemoveFilter('bathrooms', value)
       });
     });

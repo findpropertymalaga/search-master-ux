@@ -79,17 +79,17 @@ const PropertyFilters = ({ onFilterChange, currentFilters }: PropertyFiltersProp
   };
 
   const getLocationDisplayText = () => {
-    if (selectedLocations.length === 0) return "Plats";
+    if (selectedLocations.length === 0) return "Location";
     if (selectedLocations.length === 1) return selectedLocations[0];
-    return `${selectedLocations.length} platser`;
+    return `${selectedLocations.length} locations`;
   };
 
   const getPriceDisplayText = () => {
     if (currentFilters.minPrice === 0 && currentFilters.maxPrice === 5000000) {
-      return "Pris";
+      return "Price";
     }
     if (currentFilters.minPrice === 0) {
-      return `Upp till €${(currentFilters.maxPrice / 1000).toFixed(0)}k`;
+      return `Up to €${(currentFilters.maxPrice / 1000).toFixed(0)}k`;
     }
     if (currentFilters.maxPrice === 5000000) {
       return `€${(currentFilters.minPrice / 1000).toFixed(0)}k+`;
@@ -98,11 +98,11 @@ const PropertyFilters = ({ onFilterChange, currentFilters }: PropertyFiltersProp
   };
 
   const getBedroomsDisplayText = () => {
-    return currentFilters.bedrooms === 'any' ? 'Sovrum' : `${currentFilters.bedrooms}+ Sovrum`;
+    return currentFilters.bedrooms === 'any' ? 'Bedrooms' : `${currentFilters.bedrooms}+ Bedrooms`;
   };
 
   const getBathroomsDisplayText = () => {
-    return currentFilters.bathrooms === 'any' ? 'Badrum' : `${currentFilters.bathrooms}+ Badrum`;
+    return currentFilters.bathrooms === 'any' ? 'Bathrooms' : `${currentFilters.bathrooms}+ Bathrooms`;
   };
 
   return (
@@ -159,7 +159,7 @@ const PropertyFilters = ({ onFilterChange, currentFilters }: PropertyFiltersProp
               </div>
             </SelectTrigger>
             <SelectContent className="bg-white border-navy-800 z-50">
-              <SelectItem value="any" className="text-navy-800">Alla</SelectItem>
+              <SelectItem value="any" className="text-navy-800">All</SelectItem>
               <SelectItem value="1" className="text-navy-800">1+</SelectItem>
               <SelectItem value="2" className="text-navy-800">2+</SelectItem>
               <SelectItem value="3" className="text-navy-800">3+</SelectItem>
@@ -182,7 +182,7 @@ const PropertyFilters = ({ onFilterChange, currentFilters }: PropertyFiltersProp
               </div>
             </SelectTrigger>
             <SelectContent className="bg-white border-navy-800 z-50">
-              <SelectItem value="any" className="text-navy-800">Alla</SelectItem>
+              <SelectItem value="any" className="text-navy-800">All</SelectItem>
               <SelectItem value="1" className="text-navy-800">1+</SelectItem>
               <SelectItem value="2" className="text-navy-800">2+</SelectItem>
               <SelectItem value="3" className="text-navy-800">3+</SelectItem>
@@ -223,8 +223,8 @@ const PropertyFilters = ({ onFilterChange, currentFilters }: PropertyFiltersProp
               </div>
             </SelectTrigger>
             <SelectContent className="bg-white border-navy-800 z-50">
-              <SelectItem value="any" className="text-navy-800">Alla priser</SelectItem>
-              <SelectItem value="0-500000" className="text-navy-800">Upp till €500,000</SelectItem>
+              <SelectItem value="any" className="text-navy-800">All prices</SelectItem>
+              <SelectItem value="0-500000" className="text-navy-800">Up to €500,000</SelectItem>
               <SelectItem value="500000-1000000" className="text-navy-800">€500,000 - €1,000,000</SelectItem>
               <SelectItem value="1000000+" className="text-navy-800">€1,000,000+</SelectItem>
             </SelectContent>

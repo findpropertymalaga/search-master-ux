@@ -155,12 +155,12 @@ const PropertyListings = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/">HEM</Link>
+                    <Link to="/">HOME</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>KÖP</BreadcrumbPage>
+                  <BreadcrumbPage>BUY</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -174,7 +174,7 @@ const PropertyListings = () => {
 
           {/* Search Results Count for Mobile */}
           <div className="text-sm text-gray-600 flex items-center mb-4">
-            Visar <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">annonser</span>
+            Showing <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">listings</span>
           </div>
 
           {/* Results */}
@@ -235,12 +235,12 @@ const PropertyListings = () => {
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link to="/">HEM</Link>
+                      <Link to="/">HOME</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
-                    <BreadcrumbPage>KÖP</BreadcrumbPage>
+                    <BreadcrumbPage>BUY</BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
@@ -263,7 +263,7 @@ const PropertyListings = () => {
             {/* Top Controls - Search Results Count */}
             <div className="flex justify-between items-center mb-6">
               <div className="text-sm text-gray-600 flex items-center">
-                Visar <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">annonser</span>
+                Showing <span className="font-medium ml-1">{totalCount}</span> <span className="ml-1">listings</span>
               </div>
             </div>
 

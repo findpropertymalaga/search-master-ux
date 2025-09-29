@@ -16,14 +16,14 @@ const PropertyDetailBadges = ({ bedrooms, bathrooms, area, propertyType, plotSiz
       <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
         <div className="text-center">
           <div className="text-lg font-bold text-blue-800">{bedrooms}</div>
-          <div className="text-xs text-blue-600 uppercase tracking-wide">Sovrum</div>
+          <div className="text-xs text-blue-600 uppercase tracking-wide">Bedrooms</div>
         </div>
       </div>
       
       <div className="flex items-center bg-blue-50 px-3 py-2 rounded-lg border border-blue-200">
         <div className="text-center">
           <div className="text-lg font-bold text-blue-800">{bathrooms}</div>
-          <div className="text-xs text-blue-600 uppercase tracking-wide">Badrum</div>
+          <div className="text-xs text-blue-600 uppercase tracking-wide">Bathrooms</div>
         </div>
       </div>
       

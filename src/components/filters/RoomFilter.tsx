@@ -30,7 +30,7 @@ const RoomFilter = ({ label, value, onChange }: RoomFilterProps) => {
           <SelectItem value="2">2+</SelectItem>
           <SelectItem value="3">3+</SelectItem>
           <SelectItem value="4">4+</SelectItem>
-          {label === "Sovrum" && <SelectItem value="5">5+</SelectItem>}
+          {label === "Bedrooms" && <SelectItem value="5">5+</SelectItem>}
         </SelectContent>
       </Select>
     </div>
