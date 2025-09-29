@@ -154,27 +154,6 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
         >
           {isSubmitting ? "Sending..." : "Request Information"}
         </Button>
-        
-        {/* CEO Message and Image */}
-        <div className="mt-6 pt-4 border-t border-gray-200">
-          <div className="flex items-center space-x-3">
-            <div className="relative h-12 w-12 rounded-full overflow-hidden flex-shrink-0">
-              <img 
-                src="/lovable-uploads/fff4216e-628c-43da-afaf-ca7e7db2a485.png" 
-                alt="Jakob Engfeldt, CEO" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-gray-600 italic">
-                "We speak several European languages – just let us know your preference."
-              </p>
-              <p className="text-xs text-gray-500 mt-1">
-                Jakob Engfeldt, CEO
-              </p>
-            </div>
-          </div>
-        </div>
       </form>
     </Form>
   );
