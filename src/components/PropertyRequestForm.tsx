@@ -18,10 +18,10 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Namnet måste innehålla minst 2 tecken." }),
-  email: z.string().email({ message: "Vänligen ange en giltig e-postadress." }),
-  phone: z.string().min(5, { message: "Vänligen ange ett giltigt telefonnummer." }),
-  message: z.string().min(10, { message: "Meddelandet måste innehålla minst 10 tecken." }),
+  name: z.string().min(2, { message: "Name must contain at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  phone: z.string().min(5, { message: "Please enter a valid phone number." }),
+  message: z.string().min(10, { message: "Message must contain at least 10 characters." }),
 });
 
 type PropertyRequestFormProps = {
@@ -43,7 +43,7 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
       name: "",
       email: "",
       phone: "",
-      message: `Jag är intresserad av att få mer information om fastigheten med referens ${displayRef}.`,
+      message: `I am interested in getting more information about the property with reference ${displayRef}.`,
     },
   });
 
@@ -67,8 +67,8 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
       if (error) throw error;
       
       toast({
-        title: "Begäran skickad",
-        description: "Tack för ditt intresse. Vi kommer att kontakta dig inom kort.",
+        title: "Request Sent",
+        description: "Thank you for your interest. We will contact you shortly.",
       });
       
       form.reset();
@@ -76,8 +76,8 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
       console.error("Error submitting request:", error);
       toast({
         variant: "destructive",
-        title: "Fel",
-        description: "Kunde inte skicka din begäran. Försök igen senare.",
+        title: "Error",
+        description: "Could not send your request. Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -92,9 +92,9 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Namn</FormLabel>
+              <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Ditt namn" {...field} />
+                <Input placeholder="Your name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -106,9 +106,9 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>E-post</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="Din e-postadress" {...field} />
+                <Input type="email" placeholder="Your email address" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -120,9 +120,9 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Telefon</FormLabel>
+              <FormLabel>Phone</FormLabel>
               <FormControl>
-                <Input type="tel" placeholder="Ditt telefonnummer" {...field} />
+                <Input type="tel" placeholder="Your phone number" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -134,10 +134,10 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Meddelande</FormLabel>
+              <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="Ditt meddelande" 
+                  placeholder="Your message" 
                   className="min-h-[120px]" 
                   {...field} 
                 />
@@ -152,7 +152,7 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
           className="w-full bg-costa-600 hover:bg-costa-700"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Skickar..." : "Begär Information"}
+          {isSubmitting ? "Sending..." : "Request Information"}
         </Button>
         
         {/* CEO Message and Image */}
@@ -167,10 +167,10 @@ const PropertyRequestForm = ({ propertyId, propertyTitle, propertyRef }: Propert
             </div>
             <div className="flex-1">
               <p className="text-sm text-gray-600 italic">
-                "Vi talar flera europeiska språk – bara låt oss veta din preferens."
+                "We speak several European languages – just let us know your preference."
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                Jakob Engfeldt, VD
+                Jakob Engfeldt, CEO
               </p>
             </div>
           </div>
