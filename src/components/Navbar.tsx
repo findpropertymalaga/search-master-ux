@@ -146,7 +146,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'Hem', path: '/', icon: Home },
-    { name: 'Köp!!!', path: '/properties', icon: Building },
+    { name: 'Köp', path: '/properties', icon: Building },
     { name: 'Hyr', path: '/rent', icon: Building },
     { name: 'Om oss', action: handleAboutClick, icon: User },
     { name: 'Nyhetsbrev', action: handleNewsletterClick, icon: Mail },
