@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropertyListings from "./pages/PropertyListings";
 import RentProperties from "./pages/RentProperties";
 import PropertyDetails from "./pages/PropertyDetails";
@@ -27,6 +27,27 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
+  const [language, setLanguage] = useState('en');
+
+  // Language translation listener for iframe communication
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      // Verify origin for security
+      if (event.origin !== 'https://lovable.dev' && 
+          !event.origin.includes('lovable.app') &&
+          event.origin !== 'http://localhost:5173') return;
+      
+      if (event.data.type === 'LANGUAGE_CHANGE') {
+        // Update language state with event.data.language
+        setLanguage(event.data.language);
+        console.log('Language changed to:', event.data.language);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
   useEffect(() => {
     console.log("App component mounted");
     console.log("User Agent:", navigator.userAgent);
