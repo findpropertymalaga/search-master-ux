@@ -1,40 +1,36 @@
-export const getPropertyTypeDisplay = (type: string | string[]): string => {
+import { translations } from '@/i18n/translations';
+
+export const getPropertyTypeDisplay = (type: string | string[], language: 'en' | 'sv' = 'sv'): string => {
   if (Array.isArray(type)) {
-    if (type.length === 0) return 'Alla typer';
+    if (type.length === 0) return translations[language].allTypes;
     if (type.length === 1) {
-      return getSingleTypeDisplay(type[0]);
+      return getSingleTypeDisplay(type[0], language);
     }
-    return `${type.length} typer valda`;
+    return language === 'sv' ? `${type.length} typer valda` : `${type.length} types selected`;
   }
   
-  return getSingleTypeDisplay(type);
+  return getSingleTypeDisplay(type, language);
 };
 
-const getSingleTypeDisplay = (type: string): string => {
-  switch (type?.toLowerCase()) {
-    case 'apartment':
-      return 'Lägenhet';
-    case 'house':
-      return 'Hus';
-    case 'plot':
-      return 'Tomt';
-    case 'commercial':
-      return 'Kommersiell';
-    case 'new-devs':
-      return 'Nybygge';
-    case 'short-term':
-      return 'Korttid';
-    case 'long-term':
-      return 'Långtid';
-    case 'penthouse':
-      return 'Takvåning';
-    case 'ground-floor':
-      return 'Bottenvåning';
-    case 'duplex':
-      return 'Duplex';
-    case 'any':
-      return 'Alla typer';
-    default:
-      return type || 'Alla typer';
+const getSingleTypeDisplay = (type: string, language: 'en' | 'sv' = 'sv'): string => {
+  const typeMap: Record<string, keyof typeof translations.en> = {
+    'apartment': 'apartment',
+    'house': 'house',
+    'plot': 'plot',
+    'commercial': 'commercial',
+    'new-devs': 'newDevs',
+    'short-term': 'shortTerm',
+    'long-term': 'longTerm',
+    'penthouse': 'penthouse',
+    'ground-floor': 'groundFloor',
+    'duplex': 'duplex',
+    'any': 'allTypes'
+  };
+
+  const key = typeMap[type?.toLowerCase()];
+  if (key) {
+    return translations[language][key];
   }
+  
+  return type || translations[language].allTypes;
 };
