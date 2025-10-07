@@ -22,7 +22,7 @@ interface PropertySortingProps {
 const PropertySorting = ({ sortOrder, onSortChange, className = "" }: PropertySortingProps) => {
   return (
     <div className={`flex items-center space-x-2 ${className}`}>
-      <span className="text-sm font-medium text-gray-700">Sooort by:</span>
+      <span className="text-sm font-medium text-gray-700">Sort by:</span>
       <Select value={sortOrder} onValueChange={onSortChange}>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Select sorting" />
