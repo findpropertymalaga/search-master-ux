@@ -22,6 +22,8 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  console.log('🌍 LanguageProvider MOUNTED - window.location.search:', window.location.search);
+  
   // Read language from URL parameter
   const getLanguageFromUrl = (): Language => {
     const params = new URLSearchParams(window.location.search);
