@@ -9,7 +9,6 @@ import PropertyListings from "./pages/PropertyListings";
 import RentProperties from "./pages/RentProperties";
 import PropertyDetails from "./pages/PropertyDetails";
 import NotFound from "./pages/NotFound";
-import { LanguageProvider } from "./contexts/LanguageContext";
 
 // Create QueryClient with mobile-specific settings
 const queryClient = new QueryClient({
@@ -83,24 +82,22 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <div className="min-h-screen">
-              <Routes>
-                <Route path="/" element={<PropertyListings />} />
-                <Route path="/properties" element={<PropertyListings />} />
-                <Route path="/rent" element={<RentProperties />} />
-                <Route path="/properties/:id" element={<PropertyDetails />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </div>
-          </BrowserRouter>
-        </TooltipProvider>
-      </LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <div className="min-h-screen">
+            <Routes>
+              <Route path="/" element={<PropertyListings />} />
+              <Route path="/properties" element={<PropertyListings />} />
+              <Route path="/rent" element={<RentProperties />} />
+              <Route path="/properties/:id" element={<PropertyDetails />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </TooltipProvider>
     </QueryClientProvider>
   );
 };

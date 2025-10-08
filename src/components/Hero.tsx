@@ -5,11 +5,9 @@ import { Button } from '@/components/ui/button';
 import HeroBackground from './hero/HeroBackground';
 import HeroContent from './hero/HeroContent';
 import { supabase } from '@/integrations/supabase/client';
-import { useTranslation } from '@/hooks/useTranslation';
 
 const Hero = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
   const [buyPropertyCount, setBuyPropertyCount] = useState<number | null>(null);
   const [rentPropertyCount, setRentPropertyCount] = useState<number | null>(null);
 
@@ -98,8 +96,8 @@ const Hero = () => {
       <HeroBackground imageUrl="https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" />
       
       <HeroContent 
-        title={t('heroTitle')}
-        subtitle={t('heroSubtitle')}
+        title="Ditt drömhem väntar på Costa del Sol"
+        subtitle="Utforska vårt omfattande nätverk av noga utvalda, alltid uppdaterade fastigheter att köpa eller hyra."
       >
         <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
           <Button
@@ -107,9 +105,9 @@ const Hero = () => {
             className="flex-1 h-20 text-lg font-semibold bg-navy-800 hover:bg-navy-900 text-white rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl"
           >
             <div className="text-center">
-              <div className="font-bold">{t('buy')}</div>
+              <div className="font-bold">Köp</div>
               <div className="text-sm opacity-90">
-                {buyPropertyCount !== null ? `${buyPropertyCount.toLocaleString()} ${t('properties')}` : t('loading')}
+                {buyPropertyCount !== null ? `${buyPropertyCount.toLocaleString()} fastigheter` : 'Laddar...'}
               </div>
             </div>
           </Button>
@@ -119,9 +117,9 @@ const Hero = () => {
             className="flex-1 h-20 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl"
           >
             <div className="text-center">
-              <div className="font-bold">{t('rent')}</div>
+              <div className="font-bold">Hyr</div>
               <div className="text-sm opacity-90">
-                {rentPropertyCount !== null ? `${rentPropertyCount.toLocaleString()} ${t('properties')}` : t('loading')}
+                {rentPropertyCount !== null ? `${rentPropertyCount.toLocaleString()} fastigheter` : 'Laddar...'}
               </div>
             </div>
           </Button>

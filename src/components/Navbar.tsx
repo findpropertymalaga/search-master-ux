@@ -3,14 +3,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, Home, Building, User, Mail } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { useTranslation } from '@/hooks/useTranslation';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showFloatingMenu, setShowFloatingMenu] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,14 +74,14 @@ const Navbar = () => {
     modal.innerHTML = `
       <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
         <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="this.closest('.fixed').remove()">×</button>
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900">${t('newsletterTitle')}</h2>
-        <p class="text-gray-600 mb-6">${t('newsletterDescription')}</p>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-900">Håll dig uppdaterad</h2>
+        <p class="text-gray-600 mb-6">Prenumerera för att få de senaste fastighetsuppdateringarna och marknadsinsikterna.</p>
         <form id="newsletter-form" class="space-y-4">
           <div>
             <input 
               type="email" 
               id="email" 
-              placeholder="${t('enterEmail')}"
+              placeholder="Ange din e-postadress"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             >
@@ -92,7 +90,7 @@ const Navbar = () => {
             type="submit"
             class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
           >
-            ${t('subscribeNow')}
+            Prenumerera nu
           </button>
         </form>
         <div id="form-message" class="mt-4 text-center hidden"></div>
@@ -120,16 +118,16 @@ const Navbar = () => {
           });
 
           if (response.ok) {
-            messageDiv!.textContent = t('thankYou');
+            messageDiv!.textContent = 'Tack för din prenumeration! Vi håller dig uppdaterad.';
             messageDiv!.className = 'mt-4 text-center text-green-600 font-medium';
             (form as HTMLFormElement).style.display = 'none';
           } else {
-            messageDiv!.textContent = t('somethingWrong');
+            messageDiv!.textContent = 'Något gick fel. Försök igen.';
             messageDiv!.className = 'mt-4 text-center text-red-600 font-medium';
           }
         } catch (error) {
           console.error('Newsletter subscription error:', error);
-          messageDiv!.textContent = t('somethingWrong');
+          messageDiv!.textContent = 'Något gick fel. Försök igen.';
           messageDiv!.className = 'mt-4 text-center text-red-600 font-medium';
         }
         messageDiv!.classList.remove('hidden');
@@ -147,11 +145,11 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: t('home'), path: '/', icon: Home },
-    { name: t('buy'), path: '/properties', icon: Building },
-    { name: t('rent'), path: '/rent', icon: Building },
-    { name: t('about'), action: handleAboutClick, icon: User },
-    { name: t('newsletter'), action: handleNewsletterClick, icon: Mail },
+    { name: 'Hem', path: '/', icon: Home },
+    { name: 'Köp', path: '/properties', icon: Building },
+    { name: 'Hyr', path: '/rent', icon: Building },
+    { name: 'Om oss', action: handleAboutClick, icon: User },
+    { name: 'Nyhetsbrev', action: handleNewsletterClick, icon: Mail },
   ];
 
   return (
