@@ -24,7 +24,7 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   console.log('🌍 LanguageProvider MOUNTED - window.location.search:', window.location.search);
   
-  // Read language from URL parameter
+  // Read language from URL parameter for initial load
   const getLanguageFromUrl = (): Language => {
     const params = new URLSearchParams(window.location.search);
     const langParam = params.get('lang');
@@ -41,29 +41,24 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     return lang;
   });
 
-  // Update language when URL changes
+  // Listen for language changes via postMessage from parent window
   useEffect(() => {
-    const handleUrlChange = () => {
-      console.log('[LanguageContext] URL change detected');
-      const newLang = getLanguageFromUrl();
-      console.log('[LanguageContext] New language from URL:', newLang, 'Current language:', language);
-      if (newLang !== language) {
-        console.log('[LanguageContext] Language changed to:', newLang);
-        setLanguage(newLang);
+    const handleMessage = (event: MessageEvent) => {
+      // Validate the message structure
+      if (
+        event.data && 
+        event.data.type === 'LANGUAGE_CHANGE' && 
+        event.data.language &&
+        ['en', 'sv'].includes(event.data.language)
+      ) {
+        console.log('[LanguageContext] Language updated via postMessage:', event.data.language);
+        setLanguage(event.data.language as Language);
       }
     };
-
-    // Listen for popstate events (back/forward navigation)
-    window.addEventListener('popstate', handleUrlChange);
     
-    // Listen for custom language change events
-    window.addEventListener('languagechange', handleUrlChange);
-
-    return () => {
-      window.removeEventListener('popstate', handleUrlChange);
-      window.removeEventListener('languagechange', handleUrlChange);
-    };
-  }, [language]);
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   // Translation function
   const t = (key: TranslationKey): string => {
