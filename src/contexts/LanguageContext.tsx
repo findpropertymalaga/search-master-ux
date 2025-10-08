@@ -26,16 +26,27 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const getLanguageFromUrl = (): Language => {
     const params = new URLSearchParams(window.location.search);
     const langParam = params.get('lang');
-    return (langParam === 'en' || langParam === 'sv') ? langParam : 'sv'; // Default to Swedish
+    console.log('[LanguageContext] URL search params:', window.location.search);
+    console.log('[LanguageContext] Lang parameter received:', langParam);
+    const resolvedLang = (langParam === 'en' || langParam === 'sv') ? langParam : 'sv';
+    console.log('[LanguageContext] Resolved language:', resolvedLang);
+    return resolvedLang;
   };
 
-  const [language, setLanguage] = useState<Language>(getLanguageFromUrl());
+  const [language, setLanguage] = useState<Language>(() => {
+    const lang = getLanguageFromUrl();
+    console.log('[LanguageContext] Initial language set to:', lang);
+    return lang;
+  });
 
   // Update language when URL changes
   useEffect(() => {
     const handleUrlChange = () => {
+      console.log('[LanguageContext] URL change detected');
       const newLang = getLanguageFromUrl();
+      console.log('[LanguageContext] New language from URL:', newLang, 'Current language:', language);
       if (newLang !== language) {
+        console.log('[LanguageContext] Language changed to:', newLang);
         setLanguage(newLang);
       }
     };
@@ -54,8 +65,14 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   // Translation function
   const t = (key: TranslationKey): string => {
-    return translations[language][key] || key;
+    const translated = translations[language][key] || key;
+    return translated;
   };
+
+  // Log language changes
+  useEffect(() => {
+    console.log('[LanguageContext] Active language:', language);
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
