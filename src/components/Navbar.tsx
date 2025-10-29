@@ -144,8 +144,21 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Try to navigate parent window to root domain
+    if (window.parent !== window) {
+      // We're in an iframe, send message to parent
+      window.parent.postMessage({ type: 'NAVIGATE_HOME' }, '*');
+    } else {
+      // Not in iframe, use regular navigation
+      navigate('/');
+    }
+    setIsOpen(false);
+  };
+
   const menuItems = [
-    { name: 'Hem', path: '/', icon: Home },
+    { name: 'Hem', action: handleHomeClick, icon: Home },
     { name: 'Köp', path: '/properties', icon: Building },
     { name: 'Hyr', path: '/rent', icon: Building },
     { name: 'Om oss', action: handleAboutClick, icon: User },
@@ -158,12 +171,19 @@ const Navbar = () => {
         <div className="container-custom py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link 
-              to="/" 
+            <a 
+              href="#" 
               className="flex items-center"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 // Clear filters when navigating to home
                 sessionStorage.removeItem('propertySearchFilters');
+                // Navigate parent window if in iframe
+                if (window.parent !== window) {
+                  window.parent.postMessage({ type: 'NAVIGATE_HOME' }, '*');
+                } else {
+                  navigate('/');
+                }
               }}
             >
               <img 
@@ -171,7 +191,7 @@ const Navbar = () => {
                 alt="FindProperty" 
                 className="h-[30px] w-auto"
               />
-            </Link>
+            </a>
 
             {/* Mobile Lingonberry Logo - Far Right */}
             <div className="md:hidden">
